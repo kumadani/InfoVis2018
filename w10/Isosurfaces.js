@@ -62,6 +62,28 @@ function Isosurfaces( volume, isovalue )
 
     geometry.computeVertexNormals();
 
+        // Create a color map
+    var cmap = [];
+    for ( var i = 0; i < 256; i++ )
+    {
+        var S = i / 255.0; // [0,1]
+        var R = Math.max( Math.cos( ( S - 1.0 ) * Math.PI ), 0.0 );
+        var G = Math.max( Math.cos( ( S - 0.5 ) * Math.PI ), 0.0 );
+        var B = Math.max( Math.cos( S * Math.PI ), 0.0 );
+        var color = new THREE.Color( R, G, B );
+        cmap.push( [ S, '0x' + color.getHexString() ] );
+    }
+    
+        // Draw the color map
+    var lut = new THREE.Lut( 'rainbow', cmap.length );
+    lut.addColorMap( 'mycolormap', cmap );
+    lut.changeColorMap( 'mycolormap' );
+    scene.add( lut.setLegendOn( {
+        'layout':'horizontal',
+        'position': { 'x': 0.6, 'y': -1.1, 'z': 2 },
+        'dimensions': { 'width': 0.15, 'height': 1.2 }
+    } ) );
+    
     material.color = new THREE.Color( "white" );
 
     return new THREE.Mesh( geometry, material );
