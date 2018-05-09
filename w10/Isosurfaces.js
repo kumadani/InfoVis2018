@@ -74,17 +74,9 @@ function Isosurfaces( volume, isovalue )
         cmap.push( [ S, '0x' + color.getHexString() ] );
     }
     
-        // Draw the color map
-    var lut = new THREE.Lut( 'rainbow', cmap.length );
-    lut.addColorMap( 'mycolormap', cmap );
-    lut.changeColorMap( 'mycolormap' );
-    scene.add( lut.setLegendOn( {
-        'layout':'horizontal',
-        'position': { 'x': 0.6, 'y': -1.1, 'z': 2 },
-        'dimensions': { 'width': 0.15, 'height': 1.2 }
-    } ) );
+
     
-    material.color = new THREE.Color( "white" );
+    material.color = new THREE.Color().setHex(cmao[isovalue][1]);
 
     return new THREE.Mesh( geometry, material );
 
