@@ -6,6 +6,7 @@ function main()
     screen.init( volume, {
         width: window.innerWidth * 0.8,
         height: window.innerHeight,
+        targetDom: document.getElementById('display'),
         enableAutoResize: false
     });
 
