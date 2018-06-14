@@ -5,13 +5,6 @@ function main()
     var scene = new THREE.Scene();
 
     
-        /*var material = new THREE.ShaderMaterial({
-        vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('gouraud.vert').text,
-        fragmentShader: document.getElementById('gouraud.frag').text,
-    });*/
-
-    
     document.getElementById('shading-Phong-button')
             .addEventListener('click', function() {
                 material = new THREE.ShaderMaterial({
