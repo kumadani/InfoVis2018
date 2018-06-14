@@ -5,8 +5,9 @@ function main()
     var scene = new THREE.Scene();
 
     screen.init( volume, {
-        width: window.innerWidth,
+        width: window.innerWidth * 0.8,
         height: window.innerHeight,
+        targetDom: document.getElementById('display'),
         enableAutoResize: false
     });
 
@@ -22,7 +23,7 @@ function main()
     });
 
     window.addEventListener( 'resize', function() {
-        screen.resize( [ window.innerWidth, window.innerHeight ] );
+        screen.resize( [ window.innerWidth * 0.8, window.innerHeight ] );
     });
 
    
