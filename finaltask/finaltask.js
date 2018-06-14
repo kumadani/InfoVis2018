@@ -4,6 +4,33 @@ function main()
     var screen = new KVS.THREEScreen();
     var scene = new THREE.Scene();
 
+    
+        /*var material = new THREE.ShaderMaterial({
+        vertexColors: THREE.VertexColors,
+        vertexShader: document.getElementById('gouraud.vert').text,
+        fragmentShader: document.getElementById('gouraud.frag').text,
+    });*/
+
+    
+    document.getElementById('shading-Phong-button')
+            .addEventListener('click', function() {
+                material = new THREE.ShaderMaterial({
+                vertexColors: THREE.VertexColors,
+                vertexShader: document.getElementById('phong.vert').text,
+                fragmentShader: document.getElementById('phong.frag').text,
+    });
+ });
+    
+        document.getElementById('shading-Gouraud-button')
+            .addEventListener('click', function() {
+                material = new THREE.ShaderMaterial({
+                vertexColors: THREE.VertexColors,
+                vertexShader: document.getElementById('gouraud.vert').text,
+                fragmentShader: document.getElementById('gouraud.frag').text,
+    });
+ });
+    
+    
     screen.init( volume, {
         width: window.innerWidth * 0.8,
         height: window.innerHeight,
@@ -30,33 +57,6 @@ function main()
     var light = new THREE.PointLight();
     light.position.set( 5, 5, 5 );
     screen.scene.add( light );
-
-   
-    var material = new THREE.ShaderMaterial({
-        vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('gouraud.vert').text,
-        fragmentShader: document.getElementById('gouraud.frag').text,
-    });
-
-    
-    document.getElementById('shading-Phong-button')
-            .addEventListener('click', function() {
-                material = new THREE.ShaderMaterial({
-                vertexColors: THREE.VertexColors,
-                vertexShader: document.getElementById('phong.vert').text,
-                fragmentShader: document.getElementById('phong.frag').text,
-    });
- });
-    
-        document.getElementById('shading-Gouraud-button')
-            .addEventListener('click', function() {
-                material = new THREE.ShaderMaterial({
-                vertexColors: THREE.VertexColors,
-                vertexShader: document.getElementById('gouraud.vert').text,
-                fragmentShader: document.getElementById('gouraud.frag').text,
-    });
- });
-
     
     screen.loop();
 }
