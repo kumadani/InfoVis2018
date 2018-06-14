@@ -39,5 +39,24 @@ function main()
     });
 
     
+    document.getElementById('shading-Phong-button')
+            .addEventListener('click', function() {
+                material = new THREE.ShaderMaterial({
+                vertexColors: THREE.VertexColors,
+                vertexShader: document.getElementById('phong.vert').text,
+                fragmentShader: document.getElementById('phong.frag').text,
+    });
+ });
+    
+        document.getElementById('shading-Gouraud-button')
+            .addEventListener('click', function() {
+                material = new THREE.ShaderMaterial({
+                vertexColors: THREE.VertexColors,
+                vertexShader: document.getElementById('gouraud.vert').text,
+                fragmentShader: document.getElementById('gouraud.frag').text,
+    });
+ });
+
+    
     screen.loop();
 }
