@@ -20,7 +20,7 @@ function main()
         box.setWidth( 2 );
 
         var seed_point = volume.objectCenter();
-        seed_point = 5;
+        seed_point = 100;
         var streamline = new KVS.Streamline();
         streamline.setIntegrationStepLength( 0.5 );
         streamline.setIntegrationTime( 500 );
@@ -36,7 +36,7 @@ function main()
              
         document.getElementById('change-seedpoint-button')
             .addEventListener('click', function() {
-            alert("hello world!");
+            alert("hoge");
         });
         
         
