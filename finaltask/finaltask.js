@@ -31,7 +31,7 @@ function main()
         document.getElementById('seedpoint')
             .addEventListener('mousemove', function(){
                 var value = +document.getElementById('seedpoint').value;
-                document.getElementById('seedpoint').innerHTML = "seed point: " +  value;
+                document.getElementById('label').innerHTML = "seed point: " +  value;
         });
              
         document.getElementById('change-seedpoint-button')
