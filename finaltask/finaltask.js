@@ -31,18 +31,18 @@ function main()
         document.getElementById('seedpoint_x')
             .addEventListener('mousemove', function(){
             var value = +document.getElementById('seedpoint_x').value;
-            document.getElementById('label_x').innerHTML = "seed_x: " +  value + "<br>";
+            document.getElementById('x_label').innerHTML = "seed_x: " +  value + "<br>";
         });
         
         document.getElementById('seedpoint_y')
             .addEventListener('mousemove', function(){
             var value = +document.getElementById('seedpoint_y').value;
-            document.getElementById('label_y').innerHTML = "seed_y: " +  value + "<br>";
+            document.getElementById('y_label').innerHTML = "seed_y: " +  value + "<br>";
         });        
         document.getElementById('seedpoint_z')
             .addEventListener('mousemove', function(){
             var value = +document.getElementById('seedpoint_z').value;
-            document.getElementById('label_z').innerHTML = "seed_z: " +  value + "<br>";
+            document.getElementById('z_label').innerHTML = "seed_z: " +  value + "<br>";
         });
              
         document.getElementById('change-seedpoint-button')
