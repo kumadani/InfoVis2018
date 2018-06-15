@@ -28,16 +28,29 @@ function main()
         streamline.setLineWidth( 5 );
         //streamline.setSeedPoint( seed_point );
 
-        document.getElementById('seedpoint')
+        document.getElementById('seedpoint_x')
             .addEventListener('mousemove', function(){
-            var value = +document.getElementById('seedpoint').value;
-            document.getElementById('label').innerHTML = "seed point: " +  value + "<br>";
+            var value = +document.getElementById('seedpoint_x').value;
+            document.getElementById('label_x').innerHTML = "seed_x: " +  value + "<br>";
+        });
+        
+        document.getElementById('seedpoint_y')
+            .addEventListener('mousemove', function(){
+            var value = +document.getElementById('seedpoint_y').value;
+            document.getElementById('label_y').innerHTML = "seed_y: " +  value + "<br>";
+        });        
+        document.getElementById('seedpoint_z')
+            .addEventListener('mousemove', function(){
+            var value = +document.getElementById('seedpoint_z').value;
+            document.getElementById('label_z').innerHTML = "seed_z: " +  value + "<br>";
         });
              
         document.getElementById('change-seedpoint-button')
             .addEventListener('click', function() {
-            var value = +document.getElementById('seedpoint').value;
-            seed_point = value;
+            var value_x = +document.getElementById('seedpoint_x').value;            
+            var value_y = +document.getElementById('seedpoint_y').value;
+            var value_z = +document.getElementById('seedpoint_z').value;
+            seed_point = [value_x,value_y,value_z];
         });
         
         streamline.setSeedPoint( seed_point );
