@@ -8,7 +8,7 @@ function main()
         height: window.innerHeight, 
         targetDom: document.getElementById('display'), 
         enableAutoResize: false });
-
+    
     setup();
     screen.loop();
 
@@ -20,18 +20,18 @@ function main()
         box.setWidth( 2 );
 
         var seed_point = volume.objectCenter();
-        seed_point = 5;
         var streamline = new KVS.Streamline();
         streamline.setIntegrationStepLength( 0.5 );
         streamline.setIntegrationTime( 500 );
         streamline.setIntegrationMethod( KVS.RungeKutta4 );
         streamline.setIntegrationDirection( KVS.ForwardDirection );
         streamline.setLineWidth( 5 );
-        streamline.setSeedPoint( seed_point );
+        //streamline.setSeedPoint( seed_point );
 
         document.getElementById('seedpoint')
             .addEventListener('mousemove', function(){
-            alert("hello world!");
+                var value = +document.getElementById('seedpoint').value;
+                document.getElementById('seedpoint').innerHTML = "seed point: " +  value;
         });
              
         document.getElementById('change-seedpoint-button')
@@ -39,6 +39,7 @@ function main()
             alert("hoge");
         });
         
+        streamline.setSeedPoint( seed_point );
         
         var line1 = KVS.ToTHREELine( box.exec( volume ) );
         var line2 = KVS.ToTHREELine( streamline.exec( volume ) );
