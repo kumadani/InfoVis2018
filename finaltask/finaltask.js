@@ -30,13 +30,14 @@ function main()
 
         document.getElementById('seedpoint')
             .addEventListener('mousemove', function(){
-                var value = +document.getElementById('seedpoint').value;
-                document.getElementById('label').innerHTML = "seed point: " +  value;
+            var value = +document.getElementById('seedpoint').value;
+            document.getElementById('label').innerHTML = "seed point: " +  value + "<br>";
         });
              
         document.getElementById('change-seedpoint-button')
             .addEventListener('click', function() {
-            alert("hoge");
+            var value = +document.getElementById('seedpoint').value;
+            seedpoint = value;
         });
         
         streamline.setSeedPoint( seed_point );
