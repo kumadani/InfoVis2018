@@ -3,7 +3,12 @@ function main()
     var volume = new KVS.CreateTornadoData( 64, 64, 64 );
     var screen = new KVS.THREEScreen();
 
-    screen.init( volume );
+    screen.init(volume, {
+        width: window.innerWidth * 0.8, 
+        height: window.innerHeight, 
+        targetDom: document.getElementById('display'), 
+        enableAutoResize: false });
+
     setup();
     screen.loop();
 
@@ -31,6 +36,10 @@ function main()
 
         document.addEventListener( 'mousemove', function() {
             screen.light.position.copy( screen.camera.position );
+        });
+        
+        window.addEventListener('resize', function() {
+            screen.resize([ window.innerWidth * 0.8, window.innerHeight ]);
         });
     }
 }
