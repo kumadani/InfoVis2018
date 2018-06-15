@@ -33,7 +33,7 @@ function main()
             alert("hello world!");
         });
              
-        document.getElementById('change-isovalue-button')
+        document.getElementById('change-seedpoint-button')
             .addEventListener('click', function() {
             alert("hello world!");
         });
