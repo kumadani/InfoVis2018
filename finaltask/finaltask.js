@@ -37,7 +37,7 @@ function main()
         document.getElementById('change-seedpoint-button')
             .addEventListener('click', function() {
             var value = +document.getElementById('seedpoint').value;
-            seedpoint = value;
+            seed_point = value;
         });
         
         streamline.setSeedPoint( seed_point );
