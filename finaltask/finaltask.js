@@ -28,11 +28,17 @@ function main()
         streamline.setLineWidth( 5 );
         streamline.setSeedPoint( seed_point );
 
-         document.getElementById('seedpoint')
+        document.getElementById('seedpoint')
             .addEventListener('mousemove', function(){
-             alert("hello world!");
-         });
+            alert("hello world!");
+        });
              
+        document.getElementById('change-isovalue-button')
+            .addEventListener('click', function() {
+            alert("hello world!");
+        });
+        
+        
         var line1 = KVS.ToTHREELine( box.exec( volume ) );
         var line2 = KVS.ToTHREELine( streamline.exec( volume ) );
         screen.scene.add( line1 );
